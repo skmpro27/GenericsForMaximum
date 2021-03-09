@@ -48,4 +48,22 @@ public class GenericsForMaximumTest {
         double result = operation.compareDoubleForMax(7.5, 2.8, 10.6);
         Assert.assertEquals(10.6, result, 1e-15);
     }
+
+    @Test
+    public void givenMaxNumberFirstPositionReturnSameString() {
+        String result = operation.compareStringForMax("Cat", "Apple", "Ball");
+        Assert.assertEquals("Cat", result);
+    }
+
+    @Test
+    public void givenMaxNumberSecondPositionReturnSameString() {
+        String result = operation.compareStringForMax("Dog", "dog", "Cat");
+        Assert.assertEquals("dog", result);
+    }
+
+    @Test
+    public void givenMaxNumberThirdPositionReturnSameString() {
+        String result = operation.compareStringForMax("Hen", "Dog", "Van");
+        Assert.assertEquals("Van", result);
+    }
 }
