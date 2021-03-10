@@ -1,69 +1,70 @@
 package com.generics;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class GenericsForMaximumTest {
 
-    public GenericsForMaximum operation;
-
-    @Before
-    public void setUp() throws Exception {
-        operation = new GenericsForMaximum();
-    }
-
     @Test
     public void givenMaxNumberFirstPositionReturnSameInteger() {
-        int result = operation.compareGenericForMax(7, 2, 5);
+        GenericsForMaximum<Integer> operation = new GenericsForMaximum<>(7, 5, 2);
+        int result = operation.compareGenericForMax();
         Assert.assertEquals(7, result);
     }
 
     @Test
     public void givenMaxNumberSecondPositionReturnSameInteger() {
-        int result = operation.compareGenericForMax(7, 8, 5);
+        GenericsForMaximum<Integer> operation = new GenericsForMaximum<>(7, 8, 2);
+        int result = operation.compareGenericForMax();
         Assert.assertEquals(8, result);
     }
 
     @Test
     public void givenMaxNumberThirdPositionReturnSameInteger() {
-        int result = operation.compareGenericForMax(7, 2, 10);
+        GenericsForMaximum<Integer> operation = new GenericsForMaximum<>(7, 5, 10);
+        int result = operation.compareGenericForMax();
         Assert.assertEquals(10, result);
     }
 
     @Test
     public void givenMaxNumberFirstPositionReturnSameDouble() {
-        double result = operation.compareGenericForMax(7.0, 2.1, 5.6);
+        GenericsForMaximum<Double> operation = new GenericsForMaximum<>(7.0, 2.1, 5.6);
+        double result = operation.compareGenericForMax();
         Assert.assertEquals(7.0, result, 1e-15);
     }
 
     @Test
     public void givenMaxNumberSecondPositionReturnSameDouble() {
-        double result = operation.compareGenericForMax(7.6, 8.9, 5.4);
+        GenericsForMaximum<Double> operation = new GenericsForMaximum<>(7.6, 8.9, 5.4);
+        double result = operation.compareGenericForMax();
         Assert.assertEquals(8.9, result, 1e-15);
     }
 
     @Test
     public void givenMaxNumberThirdPositionReturnSameDouble() {
-        double result = operation.compareGenericForMax(7.5, 2.8, 10.6);
+        GenericsForMaximum<Double> operation = new GenericsForMaximum<>(7.5, 2.8, 10.6);
+        double result = operation.compareGenericForMax();
         Assert.assertEquals(10.6, result, 1e-15);
     }
 
     @Test
     public void givenMaxNumberFirstPositionReturnSameString() {
-        String result = operation.compareGenericForMax("Cat", "Apple", "Ball");
+        GenericsForMaximum<String> operation = new GenericsForMaximum<>("Cat", "Apple", "Ball");
+        String result = operation.compareGenericForMax();
         Assert.assertEquals("Cat", result);
     }
 
     @Test
     public void givenMaxNumberSecondPositionReturnSameString() {
-        String result = operation.compareGenericForMax("Dog", "dog", "Cat");
+        GenericsForMaximum<String> operation = new GenericsForMaximum<>("Dog", "dog", "Cat");
+        String result = operation.compareGenericForMax();
         Assert.assertEquals("dog", result);
     }
 
     @Test
     public void givenMaxNumberThirdPositionReturnSameString() {
-        String result = operation.compareGenericForMax("Hen", "Dog", "Van");
+        GenericsForMaximum<String> operation = new GenericsForMaximum<>("Hen", "Dog", "Van");
+        String result = operation.compareGenericForMax();
         Assert.assertEquals("Van", result);
     }
 }
