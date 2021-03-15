@@ -12,6 +12,11 @@ public class GenericsForMaximum<X extends Comparable<X>> {
 
     public X compareGenericForMax() {
         Arrays.sort(values);
+        displayMaxValue();
         return values[values.length - 1];
+    }
+
+    private void displayMaxValue() {
+        System.out.println(values[values.length - 1]);
     }
 }
